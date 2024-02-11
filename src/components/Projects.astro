@@ -1,0 +1,67 @@
+---
+import HtmlIcon from "./Icons/Html.astro";
+import CssIcon from "./Icons/Css.astro";
+import TailwindIcon from "./Icons/Tailwind.astro";
+import VueIcon from "./Icons/Vue.astro";
+
+const TAGS = {
+  Html: {
+    name: "HTML",
+    class: "bg-[#865D1A] text-white",
+    icon: HtmlIcon,
+  },
+  Css: {
+    name: "CSS",
+    class: "bg-[#1A4986] text-white",
+    icon: CssIcon,
+  },
+  Tailwind: {
+    name: "Tailwind",
+    class: "bg-[#1A6586] text-white",
+    icon: TailwindIcon,
+  },
+  Vue: {
+    name: "Vue",
+    class: "bg-[#457A4F] text-white",
+    icon: VueIcon,
+  },
+};
+
+const PROJECTS = [
+  {
+    title: "Weather App",
+    description:
+      "Aplicación web para consultar el clima de cualquier ciudad del mundo.",
+    link: "https://dgrazz.github.io/WeatherGraz/",
+    github: "https://github.com/DGrazz/WeatherGraz",
+    image: "/projects/WeatherApp.webp",
+    tags: [TAGS.Html, TAGS.Css, TAGS.Vue],
+  },
+];
+---
+
+{
+  PROJECTS.map(({ title, description, tags, image }) => (
+    <article>
+      <h3 class="text-2xl font-semibold text-yellow-200 mb-2">{title}</h3>
+      <p class="text-lg mb-4 text-pretty">{description}</p>
+      <ul class="flex gap-x-2 mb-2">
+        {tags.map((tag) => (
+          <li>
+            <span
+              class={`flex gap-x-2 rounded-full text-xs ${tag.class} py-1 px-2`}
+            >
+              <tag.icon class="size-4" />
+              {tag.name}
+            </span>
+          </li>
+        ))}
+      </ul>
+      <img
+        class="rounded shadow-2xl shadow-white/10 object-cover w-4/5"
+        src={image}
+        alt={`Captura de pantalla del proyecto ${title}`}
+      />
+    </article>
+  ))
+}

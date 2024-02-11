@@ -1,13 +1,69 @@
 ---
-import Layout from '../layouts/Layout.astro';
-import Card from '../components/Card.astro';
-import Badge from '../components/Badge.astro';
+import Layout from "../layouts/Layout.astro";
+import SectionContainer from "../components/SectionContainer.astro";
+import Badge from "../components/Badge.astro";
+import SocialPill from "../components/SocialPill.astro";
+import Projects from "../components/Projects.astro";
+
+import GitHubIcon from "../components/Icons/GitHub.astro";
+import LinkedInIcon from "../components/Icons/LinkedIn.astro";
+import InstagramIcon from "../components/Icons/Instagram.astro";
+import CodeIcon from "../components/Icons/Code.astro";
 ---
 
-<Layout title="Welcome to Astro.">
-	<main>
-		<h1>Hey, soy DGrazz <Badge>Disponible para trabajar</Badge></h1>
-		<h2>Desarrollador web font-end 🇪🇸</h2>
-	</main>
-</Layout>
+<Layout
+  title="Porfolio de Mario Garcia - Desarrollador y Programador Web"
+  description="Contrata a Mario Garcia para crear tu aplicacion web. Desarrollador y programador web especializado en CSS y JavaScript."
+>
+  <main class="px-4">
+    <SectionContainer class="py-44 pb-24">
+      <img
+        class="rounded-full size-12 object-cover mb-4 p-[1px] bg-white"
+        src="/public/TheGrazz-logo.png"
+        alt="Imagen de Mario Garcia"
+      />
+      <h1 class="text-white text-xl lg:text-5xl font-bold flex flex-row gap-x-4 pb-6 lg:pb-10">
+        Hey, soy DGrazz <a
+          href="https://www.instagram.com/mariogl._"
+          target="_blank"
+          rel="noopener"
+          class="flex justify-center items-center"
+          ><Badge>Disponible para trabajar</Badge></a
+        >
+      </h1>
+      <h2 class="text-xl lg:text-xl opacity-80 text-wrap max-w-[700px]">
+        Desarrollador front-end de Barcelona, España, especializado en CSS.
+        Apasionado por crear sitios web y startups que resuelvan problemas, con
+        la ambición de establecer una agencia de desarrollo web única y global.
+      </h2>
 
+      <nav class="flex gap-4 mt-8 flex-wrap">
+        <SocialPill href="https://github.com/DGrazz">
+          <GitHubIcon class="size-4 md:size-6" />
+          GitHub
+        </SocialPill>
+        <SocialPill
+          href="https://www.linkedin.com/in/mario-garcia-lopez-b748662b3/"
+        >
+          <LinkedInIcon class="size-4 md:size-6" />
+          LinkedIn
+        </SocialPill>
+        <SocialPill
+          href="https://www.instagram.com/mariogl._"
+        >
+          <InstagramIcon class="size-4 md:size-6" />
+          Instagram
+        </SocialPill>
+      </nav>
+    </SectionContainer>
+
+	<SectionContainer id="#proyectos">
+		<h2 class="text-3xl font-semibold mb-6 flex gap-x-3 items-center">
+			<CodeIcon class="size-8" />
+			Proyectos
+		</h2>
+		<Projects />
+	</SectionContainer>
+	
+  </main>
+</Layout>
