@@ -1,8 +1,14 @@
 ---
+import ProjectPill from "./ProjectPill.astro";
+
 import HtmlIcon from "./Icons/Html.astro";
 import CssIcon from "./Icons/Css.astro";
 import TailwindIcon from "./Icons/Tailwind.astro";
 import VueIcon from "./Icons/Vue.astro";
+import GitHubCatIcon from "./Icons/GitHubCat.astro";
+import GlobeIcon from "./Icons/Globe.astro";
+import LaravelIcon from "./Icons/Laravel.astro";
+import NodeIcon from "./Icons/Node.astro";
 
 const TAGS = {
   Html: {
@@ -25,9 +31,39 @@ const TAGS = {
     class: "bg-[#457A4F] text-white",
     icon: VueIcon,
   },
+  Laravel: {
+    name: "Laravel",
+    class: "bg-[#6C1507] text-white",
+    icon: LaravelIcon,
+  },
+  Node: {
+    name: "Node",
+    class: "bg-[#1B4B24] text-white",
+    icon: NodeIcon,
+  },
 };
 
 const PROJECTS = [
+  {
+    title: "BattleMath",
+    description:
+      "Juego educativo para practicar diferentes temas de matematicas luchando contra otros jugadores.",
+    link: "http://battlemath.daw.inspedralbes.cat",
+    github: "https://github.com/inspedralbes/tr2-multiplicat-dawtr2g2",
+    image: "/projects/BattleMath.webp",
+    tags: [TAGS.Laravel, TAGS.Node, TAGS.Vue, TAGS.Css],
+  },
+
+  {
+    title: "FastBites",
+    description:
+      "Aplicación web para pedir comida a domicilio. Proyecto del ciclo de grado superior de desarrollo de aplicaciones web.",
+    link: "http://prefastbites.daw.inspedralbes.cat/front-end/",
+    github: "https://github.com/inspedralbes/tr1-takeaway-dawtr1gx1",
+    image: "/projects/fastbites.webp",
+    tags: [TAGS.Laravel, TAGS.Vue, TAGS.Css],
+  },
+
   {
     title: "Weather App",
     description:
@@ -41,8 +77,8 @@ const PROJECTS = [
 ---
 
 {
-  PROJECTS.map(({ title, description, tags, image }) => (
-    <article>
+  PROJECTS.map(({ title, description, tags, image, github, link }) => (
+    <article class="mb-12">
       <h3 class="text-2xl font-semibold text-yellow-200 mb-2">{title}</h3>
       <p class="text-lg mb-4 text-pretty">{description}</p>
       <ul class="flex gap-x-2 mb-2">
@@ -58,10 +94,20 @@ const PROJECTS = [
         ))}
       </ul>
       <img
-        class="rounded shadow-2xl shadow-white/10 object-cover w-4/5"
+        class="rounded shadow-2xl shadow-white/10 object-cover w-full md:w-4/5"
         src={image}
         alt={`Captura de pantalla del proyecto ${title}`}
       />
+      <div class="flex gap-x-2 mt-4">
+        <ProjectPill href={github}>
+          <GitHubCatIcon />
+          Ver codigo fuente
+        </ProjectPill>
+        <ProjectPill href={link}>
+          <GlobeIcon />
+          Visitar sition web
+        </ProjectPill>
+      </div>
     </article>
   ))
 }
