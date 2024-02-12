@@ -18,7 +18,23 @@ const { title, description } = Astro.props;
     <meta name="viewport" content="width=device-width" />
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
     <meta name="generator" content={Astro.generator} />
-    <title>{title}</title>
+
+<!-- Facebook Meta Tags -->
+<meta property="og:url" content="https://dgrazz.netlify.app/">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Porfolio de Mario Garcia - Desarrollador y Programador Web">
+<meta property="og:description" content="Contrata a Mario Garcia para crear tu aplicacion web. Desarrollador y programador web especializado en CSS y JavaScript.">
+<meta property="og:image" content="https://dgrazz.netlify.app/porfolio-preview.webp">
+
+<!-- Twitter Meta Tags -->
+<meta name="twitter:card" content="summary_large_image">
+<meta property="twitter:domain" content="dgrazz.netlify.app">
+<meta property="twitter:url" content="https://dgrazz.netlify.app/">
+<meta name="twitter:title" content="Porfolio de Mario Garcia - Desarrollador y Programador Web">
+<meta name="twitter:description" content="Contrata a Mario Garcia para crear tu aplicacion web. Desarrollador y programador web especializado en CSS y JavaScript.">
+<meta name="twitter:image" content="https://dgrazz.netlify.app/porfolio-preview.webp">
+
+  <title>{title}</title>
   </head>
 
   <body>
