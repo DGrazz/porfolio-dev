@@ -5,6 +5,7 @@ import Badge from "../components/Badge.astro";
 import SocialPill from "../components/SocialPill.astro";
 import Projects from "../components/Projects.astro";
 import SobreMi from "../components/SobreMi.astro";
+import Footer from "../components/Footer.astro";
 
 import GitHubIcon from "../components/Icons/GitHub.astro";
 import LinkedInIcon from "../components/Icons/LinkedIn.astro";
@@ -17,7 +18,7 @@ import UserCheckIcon from "../components/Icons/UserCheck.astro";
   title="Porfolio de Mario Garcia - Desarrollador y Programador Web"
   description="Contrata a Mario Garcia para crear tu aplicacion web. Desarrollador y programador web especializado en CSS y JavaScript."
 >
-  <main class="px-4">
+  <main class="px-4 mx-auto flex flex-col">
     <SectionContainer class="py-44 pb-24">
       <img
         class="rounded-full size-20 object-cover mb-4"
@@ -59,7 +60,7 @@ import UserCheckIcon from "../components/Icons/UserCheck.astro";
       </nav>
     </SectionContainer>
 
-	<SectionContainer id="#proyectos">
+	<SectionContainer id="proyectos">
 		<h2 class="text-3xl font-semibold mb-6 flex gap-x-3 items-center">
 			<CodeIcon class="size-8" />
 			Proyectos
@@ -67,13 +68,15 @@ import UserCheckIcon from "../components/Icons/UserCheck.astro";
 		<Projects />
 	</SectionContainer>
 
-  <SectionContainer id="#sobre-mi">
+  <SectionContainer id="sobre-mi">
 		<h2 class="text-3xl font-semibold mb-6 flex gap-x-3 items-center">
 			<UserCheckIcon class="size-8" />
 			Sobre mi
 		</h2>
 		<SobreMi />
 	</SectionContainer>
+
+  <Footer />
 	
   </main>
 </Layout>
