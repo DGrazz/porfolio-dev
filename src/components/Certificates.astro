@@ -1,0 +1,38 @@
+---
+import Arrow from "./Icons/Arrow-up-right.astro";
+
+const CERTIFICATES = [
+  {
+    name: "Master en CSS: Responsive, SASS, Flexbox, Grid y Bootstrap - Udemy",
+    date: "05/05/2023",
+    url: "https://www.udemy.com/certificate/UC-4ee9b514-fa97-4e94-83e5-f93c99a51ef6/",
+    image: "/public/certificados/masterCss.webp",
+  },
+  {
+    name: "Google My Business - Google",
+    date: "04/09/2023",
+    url: "https://skillshop.exceedlms.com/student/award/SCkLA4MGNzJjNAJDiJsCExUh",
+    image: "/public/certificados/googleMyBussines.webp",
+  },
+];
+---
+
+{
+  CERTIFICATES.map(({ name, date, url, image }) => (
+    <a
+      href={url}
+      class="mb-4 group flex w-full cursor-pointer flex-col justify-between gap-2 rounded-md border border-neutral-700 p-4 transition-all duration-300 hover:border-neutral-400 md:flex-row md:items-center"
+      target="_blank"
+      rel="noreferrer"
+    >
+      <div class="flex flex-col gap-4 md:flex-row md:items-center">
+        <img class="size-14 object-cover rounded-full" src={image} alt={`Logotipo del curso ${name}`} />
+        <div>
+          <p class="text-zinc-300 font-medium text-lg">{name}</p>
+          <p class="text-xs text-yellow-400/90">{date}</p>
+        </div>
+      </div>
+      <Arrow class="size-5 transition-all duration-300 group-hover:translate-x-1 opacity-70" />
+    </a>
+  ))
+}
