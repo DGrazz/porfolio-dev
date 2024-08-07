@@ -17,29 +17,32 @@ import CertificateIcon from "../components/Icons/Certificate.astro";
 ---
 
 <Layout
-  title="Porfolio de Mario Garcia - Desarrollador y Programador Web"
-  description="Contrata a Mario Garcia para crear tu aplicacion web. Desarrollador y programador web especializado en CSS y JavaScript."
+  title="Mario Garcia's Portfolio - Web Developer and Programmer"
+  description="Hire Mario Garcia to build your web application. Web developer and programmer specializing in CSS and JavaScript."
 >
-  <main class="px-4 mx-auto flex flex-col ">
+  <main class="px-4 mx-auto flex flex-col">
     <SectionContainer class="py-44 pb-24">
       <img
         class="rounded-full size-20 object-cover mb-4"
         src="/me-profile.webp"
-        alt="Imagen de Mario Garcia"
+        alt="Image of Mario Garcia"
       />
-      <h1 class="text-white text-xl lg:text-5xl font-bold flex flex-row gap-x-4 pb-6 lg:pb-10">
-        Hey, soy DGrazz 
+      <h1
+        class="text-white text-xl lg:text-5xl font-bold flex flex-row gap-x-4 pb-6 lg:pb-10"
+      >
+        Hey, I'm DGrazz
         <a
           href="https://www.instagram.com/mariogl._"
           target="_blank"
           rel="noopener"
           class="flex items-center transition md:justify-center md:hover:scale-105"
-          ><Badge>Disponible para trabajar</Badge></a>
+          ><Badge>Available for work</Badge></a
+        >
       </h1>
       <h2 class="text-xl lg:text-xl opacity-80 text-wrap max-w-[700px]">
-        Desarrollador front-end de Barcelona, España.
-        Apasionado por crear sitios web y startups que resuelvan problemas, con
-        la ambición de establecer una agencia de desarrollo web única y global.
+        Front-end Developer from Barcelona, Spain. Passionate about creating
+        websites and startups that solve problems, with the ambition of
+        establishing a unique and global web development agency.
       </h2>
 
       <nav class="flex gap-4 mt-8 flex-wrap">
@@ -48,45 +51,42 @@ import CertificateIcon from "../components/Icons/Certificate.astro";
           GitHub
         </SocialPill>
         <SocialPill
-          href="https://www.linkedin.com/in/mario-garcia-lopez-b748662b3/"
+          href="https://www.linkedin.com/in/mario-garcia-lopez-%F0%9F%96%A5%F0%9F%8C%90-b748662b3/"
         >
           <LinkedInIcon class="size-4 md:size-6" />
           LinkedIn
         </SocialPill>
-        <SocialPill
-          href="https://www.instagram.com/mariogl._"
-        >
+        <!-- <SocialPill href="https://www.instagram.com/mariogl._">
           <InstagramIcon class="size-4 md:size-6" />
           Instagram
-        </SocialPill>
+        </SocialPill> -->
       </nav>
     </SectionContainer>
 
-	<SectionContainer id="proyectos">
-		<h2 class="text-3xl font-semibold mb-6 flex gap-x-3 items-center">
-			<CodeIcon class="size-8" />
-			Proyectos
-		</h2>
-		<Projects />
-	</SectionContainer>
+    <SectionContainer id="projects">
+      <h2 class="text-3xl font-semibold mb-6 flex gap-x-3 items-center">
+        <CodeIcon class="size-8" />
+        Projects
+      </h2>
+      <Projects />
+    </SectionContainer>
 
-  <SectionContainer class="mt-8" id="certificados">
-		<h2 class="text-3xl font-semibold mb-6 flex gap-x-3 items-center">
-			<CertificateIcon class="size-8" />
-			Certificados
-		</h2>
-		<Certificates />
-	</SectionContainer>
+    <SectionContainer class="mt-8" id="certificates">
+      <h2 class="text-3xl font-semibold mb-6 flex gap-x-3 items-center">
+        <CertificateIcon class="size-8" />
+        Certificates
+      </h2>
+      <Certificates />
+    </SectionContainer>
 
-  <SectionContainer class="mt-16" id="sobre-mi">
-		<h2 class="text-3xl font-semibold mb-6 flex gap-x-3 items-center">
-			<UserCheckIcon class="size-8" />
-			Sobre mi
-		</h2>
-		<SobreMi />
-	</SectionContainer>
+    <SectionContainer class="mt-16" id="about-me">
+      <h2 class="text-3xl font-semibold mb-6 flex gap-x-3 items-center">
+        <UserCheckIcon class="size-8" />
+        About me
+      </h2>
+      <SobreMi />
+    </SectionContainer>
 
-  <Footer />
-	
+    <Footer />
   </main>
 </Layout>

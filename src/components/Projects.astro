@@ -5,10 +5,14 @@ import HtmlIcon from "./Icons/Html.astro";
 import CssIcon from "./Icons/Css.astro";
 import TailwindIcon from "./Icons/Tailwind.astro";
 import VueIcon from "./Icons/Vue.astro";
+import NuxtIcon from "./Icons/Nuxt.astro";
+import NextIcon from "./Icons/Next.astro";
 import GitHubCatIcon from "./Icons/GitHubCat.astro";
 import GlobeIcon from "./Icons/Globe.astro";
 import LaravelIcon from "./Icons/Laravel.astro";
 import NodeIcon from "./Icons/Node.astro";
+import PhaserIcon from "./Icons/Phaser.astro";
+import PythonIcon from "./Icons/Python.astro";
 
 const TAGS = {
   Html: {
@@ -31,6 +35,16 @@ const TAGS = {
     class: "bg-[#457A4F] text-white",
     icon: VueIcon,
   },
+  Nuxt: {
+    name: "Nuxt",
+    class: "bg-[#457A4F] text-white",
+    icon: NuxtIcon,
+  },
+  Next: {
+    name: "Next",
+    class: "bg-[#2e2e2d] text-white",
+    icon: NextIcon,
+  },
   Laravel: {
     name: "Laravel",
     class: "bg-[#6C1507] text-white",
@@ -41,73 +55,125 @@ const TAGS = {
     class: "bg-[#1B4B24] text-white",
     icon: NodeIcon,
   },
+  Phaser: {
+    name: "Phaser",
+    class: "bg-[#123eb5] text-white",
+    icon: PhaserIcon,
+  },
+  Python: {
+    name: "Python",
+    class: "bg-[#706b38] text-white",
+    icon: PythonIcon,
+  },
 };
 
 const PROJECTS = [
   {
+    title: "Spottunes",
+    description:
+      "Social network to find people with your same musical tastes to attend concerts with.",
+    link: "https://spottunes.daw.inspedralbes.cat/",
+    github: "https://github.com/inspedralbes/Spottunes",
+    image: "/projects/spottunes.webp",
+    tags: [TAGS.Nuxt, TAGS.Tailwind, TAGS.Laravel, TAGS.Node],
+    finished: true,
+  },
+
+  {
     title: "BattleMath",
     description:
-      "Juego educativo para practicar diferentes temas de matematicas luchando contra otros jugadores.",
+      "Educational game to practice various math topics by battling against other players.",
     link: "http://battlemath.daw.inspedralbes.cat",
     github: "https://github.com/inspedralbes/tr2-multiplicat-dawtr2g2",
     image: "/projects/BattleMath.webp",
-    tags: [TAGS.Laravel, TAGS.Node, TAGS.Vue, TAGS.Css],
+    tags: [TAGS.Nuxt, TAGS.Css, TAGS.Phaser, TAGS.Laravel, TAGS.Node],
+    finished: true,
   },
 
   {
-    title: "FastBites",
-    description:
-      "Aplicación web para pedir comida a domicilio. Proyecto del ciclo de grado superior de desarrollo de aplicaciones web.",
-    link: "http://prefastbites.daw.inspedralbes.cat/front-end/",
-    github: "https://github.com/inspedralbes/tr1-takeaway-dawtr1gx1",
-    image: "/projects/fastbites.webp",
-    tags: [TAGS.Laravel, TAGS.Vue, TAGS.Css],
+    title: "Snkrsman",
+    description: "Sneaker management tool for sneaker resellers.",
+    link: "",
+    github: "https://github.com/PemaProjects/SneakerResellManager",
+    image: "/projects/snkrsman.webp",
+    tags: [TAGS.Nuxt, TAGS.Tailwind, TAGS.Laravel, TAGS.Node, TAGS.Python],
+    finished: false,
   },
 
   {
-    title: "Weather App",
+    title: "FindTeam",
     description:
-      "Aplicación web para consultar el clima de cualquier ciudad del mundo.",
-    link: "https://dgrazz.github.io/WeatherGraz/",
-    github: "https://github.com/DGrazz/WeatherGraz",
-    image: "/projects/WeatherApp.webp",
-    tags: [TAGS.Html, TAGS.Css, TAGS.Vue],
+      "Site where people with ideas can publish these ideas and find people who want to collaborate on that project in exchange for a % of the idea.",
+    link: "",
+    github: "https://github.com/PemaProjects/SneakerResellManager",
+    image: "/projects/innovmates.webp",
+    tags: [TAGS.Next, TAGS.Tailwind],
+    finished: false,
   },
+
+  // {
+  //   title: "FastBites",
+  //   description:
+  //     "Aplicación web para pedir comida a domicilio. Proyecto del ciclo de grado superior de desarrollo de aplicaciones web.",
+  //   link: "http://prefastbites.daw.inspedralbes.cat/front-end/",
+  //   github: "https://github.com/inspedralbes/tr1-takeaway-dawtr1gx1",
+  //   image: "/projects/fastbites.webp",
+  //   tags: [TAGS.Laravel, TAGS.Vue, TAGS.Css],
+  // },
+
+  // {
+  //   title: "Weather App",
+  //   description:
+  //     "Aplicación web para consultar el clima de cualquier ciudad del mundo.",
+  //   link: "https://dgrazz.github.io/WeatherGraz/",
+  //   github: "https://github.com/DGrazz/WeatherGraz",
+  //   image: "/projects/WeatherApp.webp",
+  //   tags: [TAGS.Html, TAGS.Css, TAGS.Vue],
+  // },
 ];
 ---
 
 {
-  PROJECTS.map(({ title, description, tags, image, github, link }) => (
-    <article class="mb-12">
-      <h3 class="text-2xl font-semibold text-yellow-200 mb-2">{title}</h3>
-      <p class="text-lg mb-4 text-pretty">{description}</p>
-      <ul class="flex gap-x-2 mb-2">
-        {tags.map((tag) => (
-          <li>
-            <span
-              class={`flex gap-x-2 rounded-full text-xs ${tag.class} py-1 px-2`}
-            >
-              <tag.icon class="size-4" />
-              {tag.name}
-            </span>
-          </li>
-        ))}
-      </ul>
-      <img
-        class="rounded shadow-2xl shadow-white/10 object-cover w-full"
-        src={image}
-        alt={`Captura de pantalla del proyecto ${title}`}
-      />
-      <div class="flex gap-x-2 mt-4">
-        <ProjectPill href={github}>
-          <GitHubCatIcon />
-          Ver codigo fuente
-        </ProjectPill>
-        <ProjectPill href={link}>
-          <GlobeIcon />
-          Visitar sition web
-        </ProjectPill>
-      </div>
-    </article>
-  ))
+  PROJECTS.map(
+    ({ title, description, tags, image, github, link, finished }) => (
+      <article class="mb-12">
+        <h3 class="text-2xl font-semibold text-yellow-200 mb-2">
+          {title}
+          {!finished && (
+            <span class="text-xs text-gray-400 ml-2">(In development)</span>
+          )}
+        </h3>
+        <p class="text-lg mb-4 text-pretty">{description}</p>
+        <ul class="flex gap-x-2 mb-2">
+          {tags.map((tag) => (
+            <li>
+              <span
+                class={`flex gap-x-2 rounded-full text-xs ${tag.class} py-1 px-2`}
+              >
+                <tag.icon class="size-4" />
+                {tag.name}
+              </span>
+            </li>
+          ))}
+        </ul>
+        <img
+          class="rounded shadow-2xl shadow-white/10 object-cover w-full"
+          src={image}
+          alt={`Captura de pantalla del proyecto ${title}`}
+        />
+        <div class="flex gap-x-2 mt-4">
+          <ProjectPill href={github}>
+            <GitHubCatIcon />
+            Ver codigo fuente
+          </ProjectPill>
+          {finished && (
+            <ProjectPill href={link}>
+              <GlobeIcon />
+              Visitar sitio web
+            </ProjectPill>
+          )}
+        </div>
+      </article>
+    )
+  )
 }
