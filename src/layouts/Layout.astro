@@ -20,32 +20,59 @@ const { title, description } = Astro.props;
     <meta name="generator" content={Astro.generator} />
 
     <!-- Facebook Meta Tags -->
-    <meta property="og:url" content="https://dgrazz.netlify.app/">
-    <meta property="og:type" content="website">
-    <meta property="og:title" content="Porfolio de Mario Garcia - Desarrollador y Programador Web">
-    <meta property="og:description" content="Contrata a Mario Garcia para crear tu aplicacion web. Desarrollador y programador web especializado en CSS y JavaScript.">
-    <meta property="og:image" content="https://dgrazz.netlify.app/porfolio-preview.webp">
+    <meta property="og:url" content="https://dgrazz.netlify.app/" />
+    <meta property="og:type" content="website" />
+    <meta
+      property="og:title"
+      content="Porfolio de Mario Garcia - Desarrollador y Programador Web"
+    />
+    <meta
+      property="og:description"
+      content="Contrata a Mario Garcia para crear tu aplicacion web. Desarrollador y programador web especializado en CSS y JavaScript."
+    />
+    <meta
+      property="og:image"
+      content="https://dgrazz.netlify.app/porfolio-preview.webp"
+    />
 
     <!-- Twitter Meta Tags -->
-    <meta name="twitter:card" content="summary_large_image">
-    <meta property="twitter:domain" content="dgrazz.netlify.app">
-    <meta property="twitter:url" content="https://dgrazz.netlify.app/">
-    <meta name="twitter:title" content="Porfolio de Mario Garcia - Desarrollador y Programador Web">
-    <meta name="twitter:description" content="Contrata a Mario Garcia para crear tu aplicacion web. Desarrollador y programador web especializado en CSS y JavaScript.">
-    <meta name="twitter:image" content="https://dgrazz.netlify.app/porfolio-preview.webp">
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta property="twitter:domain" content="dgrazz.netlify.app" />
+    <meta property="twitter:url" content="https://dgrazz.netlify.app/" />
+    <meta
+      name="twitter:title"
+      content="Porfolio de Mario Garcia - Desarrollador y Programador Web"
+    />
+    <meta
+      name="twitter:description"
+      content="Contrata a Mario Garcia para crear tu aplicacion web. Desarrollador y programador web especializado en CSS y JavaScript."
+    />
+    <meta
+      name="twitter:image"
+      content="https://dgrazz.netlify.app/porfolio-preview.webp"
+    />
 
     <title>{title}</title>
-    <script src="https://app.chatgptbuilder.io/webchat/plugin.js?v=5"></script>
-    <script>
-      ktt10.setup({id:"azlrGFoRsfGo6RXf3D3",accountId:"1384512",color:"#000000"});
-    </script>
+
+    
   </head>
 
   <body>
-    <div class="absolute top-0 z-[-2] h-screen w-full bg-neutral-950 bg-[radial-gradient(ellipse_80%_80%_at_50%_-20%,rgba(120,119,198,0.3),rgba(255,255,255,0))]"></div>
+    <div
+      class="absolute top-0 z-[-2] h-screen w-full bg-neutral-950 bg-[radial-gradient(ellipse_80%_80%_at_50%_-20%,rgba(120,119,198,0.3),rgba(255,255,255,0))]"
+    >
+    </div>
     <Header />
     <slot />
   </body>
+  <script src="https://app.chatgptbuilder.io/webchat/plugin.js?v=5"></script>
+    <script>
+      ktt10.setup({
+        id: "azlrGFoRsfGo6RXf3D3",
+        accountId: "1384512",
+        color: "#000000",
+      });
+    </script>
 </html>
 
 <style is:global>
@@ -53,7 +80,7 @@ const { title, description } = Astro.props;
     color-scheme: light dark;
   }
   html {
-    font-family: 'Onest Variable', system-ui;
+    font-family: "Onest Variable", system-ui;
     scroll-behavior: smooth;
   }
   body {
