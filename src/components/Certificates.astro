@@ -20,12 +20,24 @@ const CERTIFICATES = [
     url: "https://www.udemy.com/certificate/UC-104cc0ab-0eb1-43a9-bcf2-961573be8f42/",
     image: "/certificados/masterCss3.webp",
   },
+  {
+    name: "GIT+GitHub: Todo un sistema de control de versiones de cero - Udemy",
+    date: "14/08/2024",
+    url: "https://www.udemy.com/certificate/UC-600da661-ac86-4c3d-9edb-71abf148b62c/",
+    image: "/certificados/masterGithub.webp",
+  },
+  {
+    name: "React: De cero a experto ( Hooks y MERN ) - Udemy",
+    date: "15/12/2024",
+    url: "https://www.udemy.com/certificate/UC-a128210d-3697-47c0-b3f0-600849355cd4/",
+    image: "/certificados/masterReact.webp",
+  },
 ];
 ---
 
 
 {
-  CERTIFICATES.map(({ name, date, url, image }) => (
+  CERTIFICATES.slice().reverse().map(({ name, date, url, image }) => (
     <a
       href={url}
       class="mb-4 group flex w-full cursor-pointer flex-col justify-between gap-2 rounded-md border border-neutral-700 p-4 transition-all duration-300 hover:border-neutral-400 md:flex-row md:items-center"
@@ -43,3 +55,4 @@ const CERTIFICATES = [
     </a>
   ))
 }
+
