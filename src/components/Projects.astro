@@ -109,6 +109,7 @@ const PROJECTS = [
     image: "/projects/innovmates.webp",
     tags: [TAGS.Next, TAGS.Tailwind],
     finished: false,
+    privateCode: true,
   },
 
   // {
@@ -135,7 +136,7 @@ const PROJECTS = [
 
 {
   PROJECTS.map(
-    ({ title, description, tags, image, github, link, finished }) => (
+    ({ title, description, tags, image, github, link, finished, privateCode }) => (
       <article class="mb-12">
         <h3 class="text-2xl font-semibold text-yellow-200 mb-2">
           {title}
@@ -162,10 +163,13 @@ const PROJECTS = [
           alt={`Captura de pantalla del proyecto ${title}`}
         />
         <div class="flex gap-x-2 mt-4">
+          {!privateCode && (
+
           <ProjectPill href={github}>
             <GitHubCatIcon />
             Ver codigo fuente
           </ProjectPill>
+          )}
           {finished && (
             <ProjectPill href={link}>
               <GlobeIcon />
